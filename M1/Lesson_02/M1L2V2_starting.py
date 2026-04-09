@@ -1,12 +1,16 @@
 # import packages
 from dotenv import load_dotenv 
 import openai
+import streamlit as st
 
 # load environment variables from .env file
 load_dotenv()
 
 # Initialize OpenAI client
 client = openai.OpenAI()
+
+st.title("Hello, GenAI!")
+st.write("This is your first Streamlit app.")
 
 response = client.responses.create(
     model="gpt-4o",
@@ -18,4 +22,4 @@ response = client.responses.create(
 )
 
 # print the response from OpenAI
-print(response.output[0].content[0].text)
+st.write(response.output[0].content[0].text)
