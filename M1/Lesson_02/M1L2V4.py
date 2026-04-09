@@ -41,5 +41,6 @@ temperature = st.slider(
 
 with st.spinner("AI is working..."):
     response = get_response(user_prompt, temperature)
-    # print the response from OpenAI
-    st.write(response.output[0].content[0].text)
+
+# print the response from OpenAI
+st.write(response.output[0].content[0].text)
